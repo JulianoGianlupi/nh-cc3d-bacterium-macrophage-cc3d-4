@@ -1,6 +1,6 @@
 #!/bin/sh
 
-/usr/bin/invoke_app "$@" -C @tool/bin/BacMacroCC3D4.sh -t BacMacroCC3D4 \
+/usr/bin/invoke_app "$@" -C @tool/bin/BacMacroCC3D4.sh -t bacmacrocc3d4 \
                          -u compucell3d-4.1.1 \
                          -w captive \
                          -r none
