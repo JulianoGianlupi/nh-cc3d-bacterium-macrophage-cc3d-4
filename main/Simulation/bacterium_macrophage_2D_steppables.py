@@ -32,11 +32,7 @@ class InventoryCheckSteppable(SteppableBasePy):
         # self.pW.addDataPoint("MCS1",mcs,-2*mcs)
         # this is non optimized code. It is for illustrative purposes only.
 
-        f = lambda x: exp(-x ** 2)
-        i = integrate.quad(f, 0, 1)
-
-        print("i=", i)
-
+        
         mean_surface = 0.0
         mean_volume = 0.0
         number_of_cells = 0
@@ -52,15 +48,6 @@ class InventoryCheckSteppable(SteppableBasePy):
         else:
             self.plot_win.add_data_point("MVol", mcs, mean_volume)
             self.plot_win.add_data_point("MSur", mcs, mean_surface)
-            if mcs >= 200:
-                print("Adding meanVolume=", mean_volume)
-                try:
-                    print("plotData=", self.plot_win.plot_data["MVol"])
-                except TypeError:
-                    # happens in CML mode
-                    pass
 
         self.plot_win.show_all_plots()
 
-        if mcs == 300:
-            self.stop_simulation()
